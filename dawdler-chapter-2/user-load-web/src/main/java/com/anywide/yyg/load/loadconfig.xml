@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hosts>
+	<host name="user">
+		<package>com.anywide.yyg.user.controller</package>
+		<package>com.anywide.yyg.user.web.interceptor</package>
+		<package>com.anywide.yyg.user.web.listener</package>
+	</host>
+</hosts>

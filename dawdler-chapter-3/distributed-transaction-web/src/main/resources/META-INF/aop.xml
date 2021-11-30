@@ -1,0 +1,5 @@
+﻿<aspectj>
+  <aspects>
+    <aspect name="com.anywide.yyg.user.controller.AUserServiceAopAspect1"/>
+  </aspects>
+</aspectj>

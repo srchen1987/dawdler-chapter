@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+<zk-host>localhost:2181</zk-host><!-- zookeeeper的地址 -->
+<certificatePath>${CLASSPATH}key/dawdler.cer</certificatePath><!-- 公钥路径  -->
+
+<server-channel-group channel-group-id="distributed-transaction-api"
+ service-path="distributed-transaction-api" connection-num="1"
+ session-num="1" serializer="2"
+  user="global_user" password="song">
+</server-channel-group> 
+
+ 
+<server-channel-group channel-group-id="distributed-transaction-user-service"
+ service-path="distributed-transaction-user-service" connection-num="1"
+ session-num="1" serializer="2"
+  user="global_user" password="song">
+</server-channel-group> 
+
+<server-channel-group channel-group-id="distributed-transaction-product-service"
+ service-path="distributed-transaction-product-service" connection-num="1"
+ session-num="1" serializer="2"
+  user="global_user" password="song">
+</server-channel-group> 
+
+<server-channel-group channel-group-id="distributed-transaction-order-service"
+ service-path="distributed-transaction-order-service" connection-num="1"
+ session-num="1" serializer="2"
+  user="global_user" password="song">
+</server-channel-group> 
+
+
+
+<loads-on>
+<item sleep="30000" channel-group-id="distributed-transaction-api">user</item>
+<item sleep="30000" channel-group-id="distributed-transaction-api">order</item>
+<item sleep="30000" channel-group-id="distributed-transaction-api">product</item>
+</loads-on>
+</config>

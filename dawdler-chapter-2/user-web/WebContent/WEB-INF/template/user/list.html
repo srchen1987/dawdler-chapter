@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+#foreach($user in $userList)
+$user.username
+#end
+#pages("list.html?pageon=~p")
+</body>
+</html>

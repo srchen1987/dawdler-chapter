@@ -1,0 +1,37 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>dawdler-chapter-3</groupId>
+		<artifactId>dawdler-chapter-3</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<packaging>war</packaging>
+	<artifactId>distributed-transaction-web</artifactId>
+	<dependencies>
+			<dependency>
+			<groupId>dawdler</groupId>
+			<artifactId>dawdler-client-plug-velocity</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>dawdler</groupId>
+			<artifactId>dawdler-distributed-transaction-client</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+		</dependency>
+	</dependencies>
+	<build>
+	<plugins>
+	<plugin>
+     <artifactId>maven-war-plugin</artifactId>
+     <version>3.2.1</version>
+     <configuration>
+          <failOnMissingWebXml>false</failOnMissingWebXml>
+     </configuration>
+</plugin>
+	</plugins>
+	</build>
+</project>

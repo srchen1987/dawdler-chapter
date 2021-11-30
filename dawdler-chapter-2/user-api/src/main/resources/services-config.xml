@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+<remote-load package="${classpath}/com/anywide/yyg/load/loadconfig.xml"></remote-load>
+<zk-host username="" password="">localhost:2181</zk-host>
+
+</config>

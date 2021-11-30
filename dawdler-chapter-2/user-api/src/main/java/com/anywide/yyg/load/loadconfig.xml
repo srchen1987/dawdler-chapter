@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hosts>
+	<host name="user">
+		<package type="api">com.anywide.yyg.user.entity</package>
+		<package type="api">com.anywide.yyg.user.service</package>
+	</host>
+</hosts>

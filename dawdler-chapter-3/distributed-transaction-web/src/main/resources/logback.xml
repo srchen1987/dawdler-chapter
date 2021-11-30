@@ -1,0 +1,125 @@
+<configuration debug="true" scan="true" scanPeriod="60 seconds">  
+	 <property name="log.path" value="/home/srchen/logs" />
+    <property name="server.name" value="tlmall-order-facade" />
+    <property name="server.evn" value="prod-tlmall" />
+	<!-- 日志最大的历史 30天 -->
+	<property name="maxHistory" value="30" />
+  <!-- 
+<contextListener class="my.listener.Demo" />  --> 
+ 
+  <!-- <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender"> 
+    <encoder> 
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %c - %L %msg%n</pattern> 
+    </encoder> 
+  </appender>  -->
+ <appender name="DEBUG" class="ch.qos.logback.core.rolling.RollingFileAppender">   
+   <file>${log.path}/${server.evn}/${server.name}-debug.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">   
+       <fileNamePattern>${log.path}/${server.evn}/debug/${server.name}-debug.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+      <minIndex>1</minIndex>   
+      <maxIndex>30</maxIndex>   
+      <maxHistory>15</maxHistory>
+    </rollingPolicy>   
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">   
+      <maxFileSize>50MB</maxFileSize>   
+    </triggeringPolicy>   
+     <encoder>
+            <pattern>%date %-5level [%thread] %X{ip} %X{isMobile} %X{requestURI} %X{userId} %X{clientId} %logger %m%n</pattern>
+            <charset>UTF-8</charset> <!-- 设置字符集 -->
+        </encoder>
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">  
+    <level>DEBUG</level>  
+    <onMatch>ACCEPT</onMatch>  
+    <onMismatch>DENY</onMismatch>  
+	</filter>  
+  </appender>   
+  
+  
+  
+  <appender name="INFOSYNC" class="ch.qos.logback.core.rolling.RollingFileAppender">   
+    <file>${log.path}/${server.evn}/${server.name}-info.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">   
+       <fileNamePattern>${log.path}/${server.evn}/debug/${server.name}-info.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+      <minIndex>1</minIndex>   
+      <maxIndex>30</maxIndex>   
+      <maxHistory>15</maxHistory>
+    </rollingPolicy>   
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">   
+      <maxFileSize>50MB</maxFileSize>   
+    </triggeringPolicy>   
+     <encoder>
+            <pattern>%date %-5level [%thread] %X{ip} %X{isMobile} %X{requestURI} %X{userId} %X{clientId} %logger %m%n</pattern>
+            <charset>UTF-8</charset> <!-- 设置字符集 -->
+        </encoder>
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">  
+    <level>INFO</level>  
+    <onMatch>ACCEPT</onMatch>  
+    <onMismatch>DENY</onMismatch>  
+	</filter>  
+  </appender>   
+ <appender name="INFO" class="ch.qos.logback.classic.AsyncAppender">   
+        <appender-ref ref="INFOSYNC"/>
+           <queueSize>512</queueSize>
+        <!--默认情况下，当BlockingQueue还有20%容量，他将丢弃TRACE、DEBUG和INFO级别的event，只保留WARN和ERROR级别的event。为了保持所有的events，设置该值为0。-->
+        <discardingThreshold>0</discardingThreshold>
+        <!--neverBlock=true则写日志队列时候会调用阻塞队列的offer方法而不是put，如果队列满则直接返回，而不是阻塞，即日志被丢弃。-->
+        <neverBlock>true</neverBlock>
+  </appender>
+ 
+   <appender name="WARN" class="ch.qos.logback.core.rolling.RollingFileAppender">   
+   
+    <file>${log.path}/${server.evn}/${server.name}-warn.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">   
+       <fileNamePattern>${log.path}/${server.evn}/debug/${server.name}-warn.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+      <minIndex>1</minIndex>   
+      <maxIndex>30</maxIndex>   
+      <maxHistory>15</maxHistory>
+    </rollingPolicy>   
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">   
+      <maxFileSize>50MB</maxFileSize>   
+    </triggeringPolicy>   
+     <encoder>
+            <pattern>[%d{HH:mm:ss:SSS}] [%p]  - %m%n</pattern>
+        </encoder>
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">  
+    <level>WARN</level>  
+    <onMatch>ACCEPT</onMatch>  
+    <onMismatch>DENY</onMismatch>  
+	</filter>  
+  </appender>   
+  
+  
+  <appender name="ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">   
+     <file>${log.path}/${server.evn}/${server.name}-error.log</file>
+    <rollingPolicy class="ch.qos.logback.core.rolling.FixedWindowRollingPolicy">   
+       <fileNamePattern>${log.path}/${server.evn}/debug/${server.name}-error.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+      <minIndex>1</minIndex>   
+      <maxIndex>30</maxIndex>   
+      <maxHistory>15</maxHistory>
+    </rollingPolicy>   
+    <triggeringPolicy class="ch.qos.logback.core.rolling.SizeBasedTriggeringPolicy">   
+      <maxFileSize>50MB</maxFileSize>   
+    </triggeringPolicy>   
+     <encoder>
+            <pattern>%date %-5level [%thread] %X{ip} %X{isMobile} %X{requestURI} %X{userId} %X{clientId} %logger %m%n</pattern>
+            <charset>UTF-8</charset> <!-- 设置字符集 -->
+        </encoder>
+    <filter class="ch.qos.logback.classic.filter.LevelFilter">  
+    <level>ERROR</level>  
+    <onMatch>ACCEPT</onMatch>  
+    <onMismatch>DENY</onMismatch>  
+	</filter>  
+  </appender>   
+ 
+  
+  <root level="INFO">          
+    <appender-ref ref="DEBUG" />  
+    <appender-ref ref="INFO" /> 
+    <appender-ref ref="WARN" /> 
+    <appender-ref ref="ERROR" /> 
+  </root>   
+    <logger name="com.pttl.tlmall" level="INFO">
+    </logger>
+    <logger name="com.pttl.distributed.transaction.aspetct" level="DEBUG">
+    </logger>
+ </configuration>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+
+
+	<classPathEntry location="/home/srchen/mysql-connector-java-8.0.21.jar"></classPathEntry>
+	<context id="MySqlContext" targetRuntime="MyBatis3">
+		<jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+			connectionURL="jdbc:mysql://localhost:3306/dt_user?useSSL=false"
+			userId="root" password="" />
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+		<!--实体类生成信息 -->
+		<javaModelGenerator
+			targetPackage="com.anywide.shop.user.entity" targetProject="distributed-transaction-user-service/src/main/java">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<sqlMapGenerator
+			targetPackage="com.anywide.shop.user.mapper.xml"
+			targetProject="distributed-transaction-user-service/src/main/resources">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		<javaClientGenerator
+			targetPackage="com.anywide.shop.user.mapper" targetProject="distributed-transaction-user-service/src/main/java"
+			type="XMLMAPPER">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+		<table tableName="t_user" domainObjectName="User"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false">
+		</table>
+		
+			<table tableName="t_gold_info" domainObjectName="GoldInfo"
+			enableCountByExample="false" enableUpdateByExample="false"
+			enableDeleteByExample="false" enableSelectByExample="false"
+			selectByExampleQueryId="false">
+		</table>
+
+	</context>
+
+</generatorConfiguration>

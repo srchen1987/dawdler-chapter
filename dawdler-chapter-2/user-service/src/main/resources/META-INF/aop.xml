@@ -1,0 +1,10 @@
+﻿<aspectj>
+  <aspects>
+    <aspect name="com.anywide.yyg.user.aop.UserServiceAspect"/>
+  </aspects>
+  <!--  
+  <weaver options="-verbose">
+    <include within="*"/>
+  </weaver>
+  -->
+</aspectj>

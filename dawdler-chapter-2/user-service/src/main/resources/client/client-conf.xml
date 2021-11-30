@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+<zk-host>localhost:2181</zk-host><!-- zookeeeper的地址 -->
+<certificatePath>${CLASSPATH}key/dawdler.cer</certificatePath><!-- 公钥路径  -->
+
+<server-channel-group channel-group-id="user-api"
+ connection-num="1"
+ session-num="1" serializer="2"
+  user="global_user" password="global_password">
+</server-channel-group> 
+
+<!-- 
+channel-group-id 标识id 一般用于@RemoteService(标识id)  zookeeper里面也配置相同的结构即可
+service-path dawdler-server deploys下的项目名称
+connection-num 总连接数
+ session-num 单连接下的会话数
+ serializer 序列化方式（1，jdk默认，2 kroy，支持扩展）
+ user与password是帐号密码
+ -->
+<!--  
+<server-channel-group channel-group-id="server-id-2" connection-num="4" serializer="1">
+
+
+
+
+</server-channel-group>
+-->
+
+<loads-on>
+<item sleep="3000" channel-group-id="user-api">user</item>
+</loads-on>
+</config>
