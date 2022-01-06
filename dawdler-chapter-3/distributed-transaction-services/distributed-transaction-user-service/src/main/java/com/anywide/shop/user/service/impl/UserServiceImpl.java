@@ -4,12 +4,11 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.annotation.Resource;
-
 import com.anywide.dawdler.core.rpc.context.RpcContext;
 import com.anywide.dawdler.distributed.transaction.TransactionStatus;
 import com.anywide.dawdler.distributed.transaction.context.DistributedTransactionContext;
 import com.anywide.dawdler.serverplug.db.annotation.DBTransaction;
+import com.anywide.dawdler.serverplug.db.annotation.Repository;
 import com.anywide.shop.user.entity.GoldInfo;
 import com.anywide.shop.user.entity.User;
 import com.anywide.shop.user.mapper.GoldInfoMapper;
@@ -17,10 +16,10 @@ import com.anywide.shop.user.mapper.UserMapper;
 import com.anywide.shop.user.service.UserService;
 
 public class UserServiceImpl implements UserService{
-	@Resource
+	@Repository
 	UserMapper userMapper;
 	
-	@Resource
+	@Repository
 	GoldInfoMapper goldInfoMapper;
 	
 	@Override

@@ -2,17 +2,16 @@ package com.anywide.shop.order.service.impl;
 
 import java.math.BigDecimal;
 
-import javax.annotation.Resource;
-
 import com.anywide.dawdler.core.rpc.context.RpcContext;
 import com.anywide.dawdler.distributed.transaction.context.DistributedTransactionContext;
 import com.anywide.dawdler.serverplug.db.annotation.DBTransaction;
+import com.anywide.dawdler.serverplug.db.annotation.Repository;
 import com.anywide.shop.order.entity.Order;
 import com.anywide.shop.order.mapper.OrderMapper;
 import com.anywide.shop.order.service.OrderService;
 
 public class OrderServiceImpl implements OrderService{
-	@Resource
+	@Repository
 	OrderMapper orderMapper;
 	
 	@Override

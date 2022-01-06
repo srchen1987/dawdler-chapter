@@ -1,12 +1,9 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
-		<groupId>dawdler</groupId>
-		<artifactId>dawdler-services-starter</artifactId>
-		<version>0.0.2-RELEASES</version>
-		<relativePath />
+		<groupId>dawdler-chapter-2</groupId>
+		<artifactId>dawdler-chapter-2</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 	<artifactId>user-service</artifactId>
 	<dependencies>
@@ -17,10 +14,19 @@
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-		<groupId>dawdler</groupId>
-		<artifactId>dawdler-util</artifactId>
+			<groupId>dawdler</groupId>
+			<artifactId>dawdler-server-plug-dao</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>dawdler</groupId>
+			<artifactId>dawdler-config-serverside</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>dawdler</groupId>
+			<artifactId>dawdler-util</artifactId>
 		</dependency>
 	</dependencies>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -49,6 +55,6 @@
 				<directory>src/main/resources</directory>
 			</resource>
 		</resources>
-		<outputDirectory>${project.build.directory}/myclasses</outputDirectory>
+		<outputDirectory>${project.build.directory}/classes</outputDirectory>
 	</build>
 </project>

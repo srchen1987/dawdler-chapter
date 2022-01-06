@@ -3,12 +3,11 @@ package com.anywide.shop.product.service.impl;
 import java.util.HashMap;
 import java.util.Map;
 
-import javax.annotation.Resource;
-
 import com.anywide.dawdler.core.rpc.context.RpcContext;
 import com.anywide.dawdler.distributed.transaction.TransactionStatus;
 import com.anywide.dawdler.distributed.transaction.context.DistributedTransactionContext;
 import com.anywide.dawdler.serverplug.db.annotation.DBTransaction;
+import com.anywide.dawdler.serverplug.db.annotation.Repository;
 import com.anywide.shop.product.entity.Product;
 import com.anywide.shop.product.entity.ProductOperateInfo;
 import com.anywide.shop.product.mapper.ProductMapper;
@@ -17,10 +16,10 @@ import com.anywide.shop.product.service.ProductService;
 
 public class ProductServiceImpl implements ProductService {
 	
-	@Resource
+	@Repository
 	ProductMapper productMapper;
 	
-	@Resource
+	@Repository
 	ProductOperateInfoMapper productOperateInfoMapper;
 	
 	@Override

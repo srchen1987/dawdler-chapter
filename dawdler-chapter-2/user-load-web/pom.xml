@@ -14,14 +14,18 @@
 			<artifactId>dawdler-client-plug</artifactId>
 		</dependency>
 		<dependency>
+			<groupId>dawdler</groupId>
+			<artifactId>dawdler-load-bean</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
 			<groupId>dawdler-chapter-2</groupId>
-			<artifactId>user-service</artifactId>
-			 <version>0.0.1-SNAPSHOT</version>
+			<artifactId>user-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>dawdler</groupId>

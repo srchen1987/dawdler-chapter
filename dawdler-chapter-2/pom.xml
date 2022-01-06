@@ -9,10 +9,10 @@
   <artifactId>dawdler-chapter-2</artifactId>
   <packaging>pom</packaging>
   <modules>
-  	<module>user-service</module>
   	<module>user-api</module>
   	<module>user-web</module>
   	<module>user-load-web</module>
+  	<module>dawdler-chapter-2-services</module>
   </modules>
 
 </project>

@@ -5,10 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import javax.annotation.Resource;
-
 import com.anywide.dawdler.conf.annotation.FieldConfig;
 import com.anywide.dawdler.serverplug.db.annotation.DBTransaction;
+import com.anywide.dawdler.serverplug.db.annotation.Repository;
 import com.anywide.dawdler.serverplug.db.transaction.LocalConnectionFactory;
 import com.anywide.dawdler.serverplug.load.bean.Page;
 import com.anywide.yyg.user.dao.UserDAO;
@@ -25,10 +24,10 @@ import com.anywide.yyg.user.service.UserService;
  *
  */
 public class UserServiceImpl implements UserService {
-	@Resource
+	@Repository
 	UserDAO userDao;
 
-	@Resource
+	@Repository
 	UserMapper userMapper;
 
 	@FieldConfig(path = "mypath", value = "name")
@@ -49,7 +48,6 @@ public class UserServiceImpl implements UserService {
 		System.out.println(con);
 		Page page = new Page(pageOn, row);
 		System.out.println("name:" + name);
-//		List<User> list = userDao.selectUserList(pageOn, row, page);
 		List<User> list = userMapper.selectUserList();
 		result.put("page", page);
 		result.put("userList", list);

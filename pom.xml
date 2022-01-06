@@ -27,7 +27,7 @@
 		<javax.servlet-api.version>3.1.0</javax.servlet-api.version>
 		<jackson-core.version>2.12.0-rc2</jackson-core.version>
 		<commons-fileupload.version>1.3.3</commons-fileupload.version>
-		<velocity.version>2.2</velocity.version>
+		<velocity.version>2.3</velocity.version>
 		<jedis.version>3.3.0</jedis.version>
 		<caffeine.version>2.8.4</caffeine.version>
 		<mysql.version>8.0.21</mysql.version>
@@ -56,11 +56,6 @@
 			</dependency>
 			<dependency>
 				<groupId>dawdler</groupId>
-				<artifactId>dawdler-core</artifactId>
-				<version>${dawdler.build.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>dawdler</groupId>
 				<artifactId>dawdler-client</artifactId>
 				<version>${dawdler.build.version}</version>
 			</dependency>
@@ -85,11 +80,16 @@
 				<version>${dawdler.build.version}</version>
 			</dependency>
 
-		<dependency>
-			<groupId>dawdler</groupId>
-			<artifactId>dawdler-services-starter</artifactId>
-			<version>${dawdler.build.version}</version>
-		</dependency>
+			<dependency>
+				<groupId>dawdler</groupId>
+				<artifactId>dawdler-services-starter</artifactId>
+				<version>${dawdler.build.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>dawdler</groupId>
+				<artifactId>dawdler-core</artifactId>
+				<version>${dawdler.build.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>dawdler</groupId>
 				<artifactId>dawdler-client-plug</artifactId>
@@ -108,11 +108,6 @@
 			<dependency>
 				<groupId>dawdler</groupId>
 				<artifactId>dawdler-util</artifactId>
-				<version>${dawdler.build.version}</version>
-			</dependency>
-			<dependency>
-				<groupId>dawdler</groupId>
-				<artifactId>dawdler-client</artifactId>
 				<version>${dawdler.build.version}</version>
 			</dependency>
 			<dependency>
