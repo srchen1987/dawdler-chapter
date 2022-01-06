@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
 	<zk-host username="" password="">localhost:2181</zk-host>
+	<packages-in-classes>
+		<package-path>com.anywide.yyg.user.filter</package-path>
+		<package-path>com.anywide.yyg.user.listener</package-path>
+		<package-path>com.anywide.yyg.user.service.impl</package-path>
+	</packages-in-classes>
 	<datasources>
 		<!-- 数据源配置 根据不同的数据库连接池进行配置即可 -->
 		<datasource id="userDataSource_write"

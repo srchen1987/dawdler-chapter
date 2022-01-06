@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
 <zk-host>localhost:2181</zk-host>
+	<packages-in-classes>
+		<package-path>com.anywide.shop.user.service.impl</package-path>
+	</packages-in-classes>
 	<datasources>
 		<!-- 数据源配置 根据不同的数据库连接池进行配置即可 -->
 		<datasource id="userDataSource_write"

@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
-<zk-host>localhost:2181</zk-host>
+	<zk-host>localhost:2181</zk-host>
+	<packages-in-classes>
+		<package-path>com.anywide.shop.order.service.impl</package-path>
+	</packages-in-classes>
 	<datasources>
 		<!-- 数据源配置 根据不同的数据库连接池进行配置即可 -->
 		<datasource id="orderDataSource_write"
@@ -19,19 +22,19 @@
 		</datasource>
 	</datasources>
 	<mybatis>
-	<mappers>
-	 <mapper>classpath*:com/anywide/shop/*/mapper/xml/*.xml</mapper>
-	</mappers>
+		<mappers>
+			<mapper>classpath*:com/anywide/shop/*/mapper/xml/*.xml</mapper>
+		</mappers>
 	</mybatis>
 	<datasource-expressions>
-	<datasource-expression id="orderDataSource"
-		latent-expression="write=[orderDataSource_write],read=[orderDataSource_write|orderDataSource_write]" /><!-- 
-		数据源表达式配置 id为标识 latent_expression为读写配置 其中write为写连接 read为读连接 读连接可以配置多个用|分开 
-		轮询方式调用 -->
+		<datasource-expression id="orderDataSource"
+			latent-expression="write=[orderDataSource_write],read=[orderDataSource_write|orderDataSource_write]" /><!-- 
+			数据源表达式配置 id为标识 latent_expression为读写配置 其中write为写连接 read为读连接 读连接可以配置多个用|分开 
+			轮询方式调用 -->
 	</datasource-expressions>
 	<decisions>
-	<!-- mapping 需要注入数据源的service包 latent_expression 为数据源表达式配置中的id -->
-	<decision mapping="com.anywide.shop.order.service.impl"
-		latent-expression="orderDataSource" />
+		<!-- mapping 需要注入数据源的service包 latent_expression 为数据源表达式配置中的id -->
+		<decision mapping="com.anywide.shop.order.service.impl"
+			latent-expression="orderDataSource" />
 	</decisions>
 </config>

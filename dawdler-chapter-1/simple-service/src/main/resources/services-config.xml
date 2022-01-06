@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
 <zk-host username="" password="">localhost:2181</zk-host>
+<packages-in-classes>
+		<package-path>com.anywide.dawdler.demo.service.impl</package-path>
+</packages-in-classes>
 </config>
